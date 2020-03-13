@@ -1,5 +1,9 @@
 <h1><%= @post.title %></h1>
 
 <!-- Add code here to link to the post's category. -->
+<h3>Category: <%= link_to @post.category.name, category_path(@post.category) if @post.category %></h3>
+
+<%# if statement is there to say that we will only show an h3 tage with a link if the post has been associated with a Category %>
+<%# post can be instantiated without a Category object %>
 
 <p><%= @post.description %></p>
